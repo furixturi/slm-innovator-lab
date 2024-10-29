@@ -254,7 +254,7 @@ def is_bounding_box_larger_than(bbox, min_width=1, min_height=1.0):
     x0, y0, x1, y1 = bbox
     width = x1 - x0
     height = y1 - y0
-    print(width, height)
+    print(f"is_bounding_box_larger_than - width: {width}, height: {height}")
     return width > min_width and height > min_height
 
 
@@ -314,7 +314,7 @@ def clean_html(html):
         # Replace multiple spaces with a single space
         text = ' '.join(text.split())
     except Exception as e:
-        print(f"Error processing HTML: {e}\nHTML segment causing issue: {html[:500]}")
+        print(f"clean_html - Error processing HTML: {e}\nHTML segment causing issue: {html[:500]}")
         # Use raw text extraction as a fallback
         text = BeautifulSoup(html, 'html.parser').get_text(separator=' ', strip=True)
         text = ' '.join(text.split())

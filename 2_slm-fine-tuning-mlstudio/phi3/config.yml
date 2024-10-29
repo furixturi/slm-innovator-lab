@@ -1,7 +1,7 @@
 config:
-    AZURE_SUBSCRIPTION_ID: "<YOUR-SUBSCRIPTION-ID>" # Please modify to your subscription
-    AZURE_RESOURCE_GROUP: "<YOUR-RESOURCE-GROUP>" # Please modify to your Azure resource group
-    AZURE_WORKSPACE: "<YOUR-AZURE-WORKSPACE>" # Please modify to your Azure workspace
+    AZURE_SUBSCRIPTION_ID: "09aa60b6-29c0-4956-94ef-1d91ab7cf6a9" # Please modify to your subscription
+    AZURE_RESOURCE_GROUP: "slm-innovation-lab" # Please modify to your Azure resource group
+    AZURE_WORKSPACE: "slm-innv-eastus" # Please modify to your Azure workspace
     AZURE_DATA_NAME: "hf-ultrachat" # Please modify to your AzureML data name
     DATA_DIR: "./dataset"
     CLOUD_DIR: "./cloud"
