@@ -2,7 +2,7 @@ config:
     AZURE_SUBSCRIPTION_ID: "09aa60b6-29c0-4956-94ef-1d91ab7cf6a9" # Please modify to your subscription
     AZURE_RESOURCE_GROUP: "slm-innovation-lab" # Please modify to your Azure resource group
     AZURE_WORKSPACE: "slm-innv-eastus" # Please modify to your Azure workspace
-    AZURE_DATA_NAME: "hf-ultrachat" # Please modify to your AzureML data name
+    AZURE_DATA_NAME: "slm-innv-dataset" # Please modify to your AzureML data name
     DATA_DIR: "./dataset"
     CLOUD_DIR: "./cloud"
     HF_MODEL_NAME_OR_PATH: "microsoft/Phi-3.5-mini-instruct"
@@ -10,8 +10,8 @@ config:
     USE_LOWPRIORITY_VM: true
 
 train:
-    azure_env_name: "llm-finetuning-2024-11-05" # Please modify to your AzureML env name
-    azure_compute_cluster_name: "gpu-cluster-a100"
+    azure_env_name: "slm-innv-lab-train-aml-env" # Please modify to your AzureML env name
+    azure_compute_cluster_name: "gpu-cluster-a100-lowpriority"
     azure_compute_cluster_size: "Standard_NC24ads_A100_v4" # 1 x A100 (80GB)
     epoch: 1
     train_batch_size: 8
@@ -22,8 +22,8 @@ train:
     wandb_run_name: ""
 
 serve:
-    azure_env_name: "llm-serving-2024-11-05" # Please modify to your AzureML env name
-    azure_model_name: "phi3-finetune-2024-11-05" # Please modify to your AzureML model name
-    azure_endpoint_name: "phi3-endpoint-2024-11-05"
+    azure_env_name: "slm-innv-lab-serve-aml-env" # Please modify to your AzureML env name
+    azure_model_name: "slm-innv-lab-phi3-ft" # Please modify to your AzureML model name
+    azure_endpoint_name: "slm-innv-lab-phi3-ft-endpoint"
     azure_deployment_name: "phi3-blue"
     azure_serving_cluster_size: "Standard_NC6s_v3"
