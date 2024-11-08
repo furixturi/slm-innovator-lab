@@ -11,7 +11,8 @@ config:
 
 train:
     azure_env_name: "slm-innv-lab-train-aml-env" # Please modify to your AzureML env name
-    azure_compute_cluster_name: "gpu-cluster-a100-lowpriority"
+    # azure_compute_cluster_name: "gpu-cluster-a100-lowpriority"
+    azure_compute_cluster_name: "slm-innv-lab-finetune"
     azure_compute_cluster_size: "Standard_NC24ads_A100_v4" # 1 x A100 (80GB)
     epoch: 1
     train_batch_size: 8
@@ -26,4 +27,5 @@ serve:
     azure_model_name: "slm-innv-lab-phi3-ft" # Please modify to your AzureML model name
     azure_endpoint_name: "slm-innv-lab-phi3-ft-endpoint"
     azure_deployment_name: "phi3-blue"
-    azure_serving_cluster_size: "Standard_NC6s_v3"
+    # azure_serving_cluster_size: "Standard_NC24ads_A100_v4" # AML quota: Standard NCADSA100v4 Family Dedicated vCPU -> 24 cores (1 VM)
+    azure_serving_cluster_size: "Standard_NC6s_v3" # AML quota: Standard NCSv3 Family Cluster Dedicated vCPUs -> 12 cores (2 VMs)
